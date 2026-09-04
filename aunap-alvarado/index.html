@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUNAP — Visión Estratégica de Comunicaciones</title>
+<style>
+  :root {
+    --azul-profundo: #0A2E4D;
+    --azul-medio: #1B5E8C;
+    --arena: #E8E4DC;
+    --texto: #1a1a1a;
+    --gris: #666;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--arena);
+    color: var(--texto);
+    line-height: 1.6;
+  }
+  .slide {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(10, 46, 77, 0.1);
+  }
+  .slide:first-child {
+    background: var(--azul-profundo);
+    color: white;
+    text-align: center;
+  }
+  .slide h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .slide h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--azul-profundo);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  .slide h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: var(--azul-medio);
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 600;
+  }
+  .slide p { font-size: 1.1rem; margin-bottom: 1rem; }
+  .slide .subtitle { font-size: 1.3rem; opacity: 0.85; font-weight: 300; }
+  .slide .meta { font-size: 0.95rem; opacity: 0.6; margin-top: 2rem; }
+  ul { list-style: none; padding: 0; }
+  ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+  }
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    background: var(--azul-medio);
+    border-radius: 50%;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(10, 46, 77, 0.08);
+    border-top: 3px solid var(--azul-medio);
+  }
+  .card h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul-profundo);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  .card p { font-size: 0.95rem; color: var(--gris); }
+  .disclaimer {
+    background: rgba(255,255,255,0.1);
+    border-left: 3px solid #E8E4DC;
+    padding: 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  .col {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(10, 46, 77, 0.08);
+  }
+  .col h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul-profundo);
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--azul-medio);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 4px;
+    background: var(--azul-medio);
+    width: 0%;
+    z-index: 100;
+    transition: width 0.1s;
+  }
+  .nav-hint {
+    position: fixed;
+    bottom: 1rem; right: 1rem;
+    background: var(--azul-profundo);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  @media (max-width: 600px) {
+    .slide h1 { font-size: 1.8rem; }
+    .slide h2 { font-size: 1.4rem; }
+    .two-col { grid-template-columns: 1fr; }
+    .slide { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<section class="slide">
+  <span class="tag" style="background:rgba(255,255,255,0.2)">AUNAP · 2026</span>
+  <h1>Visión Estratégica de Comunicaciones</h1>
+  <p class="subtitle">Autoridad Nacional de Acuicultura y Pesca</p>
+  <p class="subtitle" style="margin-top:0.5rem">Juan Rodrigo Alvarado — Director</p>
+  <p class="meta">Propuesta de Diego Vargas · Septiembre 2026</p>
+</section>
+
+<section class="slide">
+  <h2>Naturaleza del documento</h2>
+  <div class="disclaimer">
+    Esto es una <strong>visión ejecutiva</strong>, no un plan de comunicación. No contiene fechas específicas, responsables ni compromisos de ejecución. Todo se concreta tras un briefing formal con las partes involucradas, documentado desde el minuto uno. Los plazos aquí son estimados en meses, sujetos a ajuste.
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Diagnóstico</h2>
+  <ul>
+    <li>AUNAP: Autoridad Nacional de Acuicultura y Pesca, adscrita al Ministerio de Agricultura</li>
+    <li>Misión: proteger, ordenar y desarrollar el sector pesquero y acuícola con sostenibilidad y justicia social</li>
+    <li>Visión 2027: ser la entidad líder del sector</li>
+    <li>Nuevo director: Juan Rodrigo Alvarado, ingeniero agrónomo, asume el 1 de septiembre de 2026</li>
+    <li>Perfil empresarial, jurídico, independiente de la política tradicional</li>
+    <li>Paralelo narrativo con el presidente Abelardo de la Espriella: dos hombres de origen empresarial que asumen cargo público con lógica de gestión</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>La doble estrategia</h2>
+  <div class="two-col">
+    <div class="col">
+      <h4>La entidad como plataforma</h4>
+      <p>Comunica lo misional: datos, operativos, cumplimiento de objetivos, seguridad alimentaria, aporte al PIB.</p>
+    </div>
+    <div class="col">
+      <h4>Él como marca personal</h4>
+      <p>Comunica la cara, la cercanía, la opinión y la proyección nacional. La entidad lo proyecta; él proyecta a la entidad.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Canales: AUNAP</h2>
+  <p>Cuatro canales ya activos — la voz institucional:</p>
+  <div class="card-grid">
+    <div class="card"><h4>X</h4><p>@AUNAPColombia · ~19.000 seguidores</p></div>
+    <div class="card"><h4>Instagram</h4><p>@Aunapcolombia</p></div>
+    <div class="card"><h4>Facebook</h4><p>Verificado</p></div>
+    <div class="card"><h4>YouTube</h4><p>Oficial · Pregúntele al Director · Cocinando con el Director</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Canales: Juan Rodrigo Alvarado</h2>
+  <p>Arranca de cero. Tres canales personales nuevos:</p>
+  <ul>
+    <li><strong>X</strong> — verificación pagada desde el día uno, peso de autoridad</li>
+    <li><strong>Facebook</strong> — cercanía territorial</li>
+    <li><strong>Instagram</strong> — día a día humano, historias</li>
+  </ul>
+  <p style="margin-top:1.5rem;font-size:0.95rem;color:var(--gris)">Regla: la entidad publica lo misional, él publica la cercanía y la opinión. Los perfiles nunca se confunden.</p>
+</section>
+
+<section class="slide">
+  <h2>Red territorial</h2>
+  <p>AUNAP opera con subdirectorios regionales. En el primer mes: encuentro de comunicadores territoriales.</p>
+  <ul>
+    <li>Presencial en Bogotá si hay presupuesto, o virtual de cuatro horas</li>
+    <li>Protocolo de flujo de información: qué se reporta, en qué formato, con qué periodicidad</li>
+    <li>Cada acción territorial se convierte en materia prima del centro de noticias y del banco documental</li>
+    <li>Capacitación a cargo de la jefatura de prensa</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Línea editorial</h2>
+  <ul>
+    <li>Tono híbrido: en territorio, cercano y de campo; en medios nacionales, técnico y de autoridad</li>
+    <li>Temas: cadenas productivas, productores pequeños y medianos, seguridad alimentaria, sostenibilidad</li>
+    <li>Columna de opinión en medios departamentales: El Olfato, El Irreverente, Ecos del Combeima</li>
+    <li>Espacio radial quincenal en Ondas de Ibagué y Ecos del Combeima</li>
+    <li>Correo oficial a entidades del Estado — ministerios, gobernaciones, alcaldías, gremios</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Rueda de prensa nacional</h2>
+  <div class="card" style="max-width:600px;margin:0 auto">
+    <h4>Enero 2027</h4>
+    <p>Tras tres meses de material consolidado. No es una presentación vacía: es el lanzamiento de un plan con cifras y un hecho escalable real. Conecta a Alvarado como fuente precisa para medios nacionales.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Recursos</h2>
+  <p>Preguntas abiertas al briefing:</p>
+  <ul>
+    <li>¿Con qué recurso humano cuenta la entidad — comunicadores, diseñador, editor?</li>
+    <li>¿Con qué equipo tecnológico — cómputo, software de edición, licencias?</li>
+    <li>¿Con qué capacidad de almacenamiento en la nube?</li>
+  </ul>
+  <p style="margin-top:1.5rem;font-size:0.95rem;color:var(--gris)">Categorías a adquirir: almacenamiento en la nube, equipo de terreno (Osmo Pocket / Insta360), cámara híbrida (Sony / Fujifilm), micrófonos y grabadora profesional (Zoom / Tascam) para podcast orgánico.</p>
+</section>
+
+<section class="slide">
+  <h2>Cronograma</h2>
+  <div class="card-grid">
+    <div class="card"><h4>90 días</h4><p>Estabilizar comunicación, posicionar a Alvarado, activar canales, arrancar banco documental.</p></div>
+    <div class="card"><h4>Año 1</h4><p>Consolidar autoridad, columna, radio, rueda de prensa nacional.</p></div>
+    <div class="card"><h4>Año 2</h4><p>Cosechar visibilidad nacional y cerrar con producto documental.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Cierre documental</h2>
+  <p>Banco de material clasificado por tema y territorio — escrito, audio, video, foto — que alimenta todo lo demás y se convierte al cierre en el producto de gestión que proyecta a Alvarado a nivel nacional.</p>
+  <ul style="margin-top:1.5rem">
+    <li>Libro o revista de gestión</li>
+    <li>Compilado audiovisual</li>
+    <li>Compilado de audios</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Marco narrativo</h2>
+  <div class="disclaimer" style="background:white;border-left-color:var(--azul-medio)">
+    No se propone concepto final. Se plantean las preguntas que lo definirán tras el briefing:
+    <ul style="margin-top:1rem">
+      <li>¿Cuál es la promesa central de Alvarado?</li>
+      <li>¿Qué conflicto resuelve?</li>
+      <li>¿Qué lo diferencia de los directores anteriores?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide" style="text-align:center;background:var(--azul-profundo);color:white">
+  <h1 style="color:white">Siguiente paso</h1>
+  <p class="subtitle" style="margin-top:1rem">Agendar el briefing formal</p>
+  <p class="meta" style="color:rgba(255,255,255,0.6)">Diego Vargas · diegovargasmkt</p>
+</section>
+
+<div class="nav-hint">Desliza ↓</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    document.getElementById('progress').style.width = scrolled + '%';
+  });
+</script>
+</body>
+</html>
