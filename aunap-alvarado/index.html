@@ -277,6 +277,11 @@
     font-weight: 600;
     margin-left: 0.5rem;
   }
+  .isotipo {
+    width: 64px; height: 64px;
+    filter: drop-shadow(0 4px 12px rgba(46,134,193,0.4));
+  }
+  .isotipo-sm { width: 28px; height: 28px; }
   @media (max-width: 600px) {
     .slide h1 { font-size: 2rem; }
     .slide h2 { font-size: 1.5rem; }
@@ -288,10 +293,27 @@
 <body>
 <div class="progress" id="progress"></div>
 
+<!-- ISOTIPO SVG: ondas + pez, propio, no es el logo oficial -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2E86C1"/>
+      <stop offset="1" stop-color="#2E8B57"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 <section class="slide">
   <span class="tag">AUNAP · 2026</span>
-  <div class="logo-mark" style="justify-content:center;margin-bottom:1.5rem;font-size:1.3rem">
-    <span class="dot"></span> AUNAP
+  <div style="display:flex;justify-content:center;margin-bottom:1.5rem;position:relative;z-index:1">
+    <svg class="isotipo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 44c6-10 14-14 24-14s18 4 24 14" stroke="url(#g1)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+      <path d="M8 52c6-8 14-11 24-11s18 3 24 11" stroke="url(#g1)" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+      <path d="M14 30c8 6 20 6 32 0" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M30 22c2 4 6 6 12 5-2 5-7 8-14 7 1-4 2-8 2-12z" fill="url(#g1)"/>
+      <circle cx="33" cy="26" r="1.6" fill="#0A2E4D"/>
+      <path d="M44 27l6-3-1 5z" fill="url(#g1)"/>
+    </svg>
   </div>
   <h1>Visión Estratégica de Comunicaciones</h1>
   <p class="subtitle">Autoridad Nacional de Acuicultura y Pesca</p>
@@ -437,8 +459,15 @@
 </section>
 
 <section class="slide" style="text-align:center;background:linear-gradient(135deg, #0A2E4D 0%, #1B5E8C 100%);color:white">
-  <div class="logo-mark" style="justify-content:center;margin-bottom:1.5rem;font-size:1.3rem;color:white">
-    <span class="dot"></span> AUNAP
+  <div style="display:flex;justify-content:center;margin-bottom:1.5rem">
+    <svg class="isotipo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 44c6-10 14-14 24-14s18 4 24 14" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+      <path d="M8 52c6-8 14-11 24-11s18 3 24 11" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+      <path d="M14 30c8 6 20 6 32 0" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M30 22c2 4 6 6 12 5-2 5-7 8-14 7 1-4 2-8 2-12z" fill="#fff"/>
+      <circle cx="33" cy="26" r="1.6" fill="#0A2E4D"/>
+      <path d="M44 27l6-3-1 5z" fill="#fff"/>
+    </svg>
   </div>
   <h1 style="color:white">Siguiente paso</h1>
   <p class="subtitle" style="margin-top:1rem">Agendar el briefing formal</p>
